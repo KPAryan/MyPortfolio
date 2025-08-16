@@ -47,23 +47,26 @@ if (menuBtn && navList) {
     navList.classList.toggle('open');
     menuBtn.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', menuBtn.classList.contains('open'));
+    document.body.classList.toggle('menu-open'); // Add/remove this line
   });
 
-  // Close menu on link click (mobile)
-  navList.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navList.classList.remove('open');
-      menuBtn.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    });
+  // And in the close menu on link click listener
+navList.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navList.classList.remove('open');
+    menuBtn.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open'); // Add this line
   });
+});
 
-  // If user resizes to desktop, ensure menu is reset
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      navList.classList.remove('open');
-      menuBtn.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    }
-  });
+  // And in the resize listener
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    navList.classList.remove('open');
+    menuBtn.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open'); // Add this line
+  }
+});
 }
