@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aryan Kumar | Data Analyst Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Smooth scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("a[href^='#']").forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+          });
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <header>
+    <h1>Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h2>Hi, I'm Aryan Kumar</h2>
+      <p>Aspiring <strong>Data Analyst</strong> skilled in Python, SQL, Power BI & Machine Learning.  
+         I love solving problems using data and creating impactful dashboards & models.</p>
+      <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
+    </div>
+    <div class="hero-image">
+      <img src="profilep.jpg" alt="Aryan Kumar">
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+<section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      I am <b>Aryan Kumar</b>, a passionate learner and aspiring <b>Data Analyst</b>.  
+      I have recently completed my <b>B.Tech in Computer Science (Artificial Intelligence & Machine Learning)</b> with a CGPA of 8.41.  
+      My journey in technology started with a <b>Diploma in Computer Science and Engineering</b>, which gave me strong fundamentals in programming and problem-solving.
+    </p>
+    <p>
+      Currently, I am enrolled in the <b>Coding Ninjas Data Analytics Job Bootcamp</b>, where I am enhancing my skills in  
+      <b>Python, SQL, Power BI, Excel, and Machine Learning</b>.  
+      This program is helping me gain hands-on experience in real-world datasets, business problem solving, and storytelling with data.
+    </p>
+    <p>
+      With a strong foundation in both academics and practical training, I aim to leverage data to create  
+      <i>meaningful insights, data-driven decisions, and impactful visualizations</i>.
+    </p>
+  </section>
+  
+  <!-- ========== SKILLS ========== -->
+<section class="skills" id="skills">
+    <h2>Technical Skills</h2>
+  
+    <div class="skills-container">
+  
+      <div class="skill-card" data-aos="fade-up">
+        <h3>Programming</h3>
+        <div class="skill">
+          <span>Python</span>
+          <div class="progress-bar"><div style="width: 90%"></div></div>
+        </div>
+        <div class="skill">
+          <span>Java</span>
+          <div class="progress-bar"><div style="width: 80%"></div></div>
+        </div>
+        <div class="skill">
+          <span>SQL</span>
+          <div class="progress-bar"><div style="width: 88%"></div></div>
+        </div>
+      </div>
+  
+      <div class="skill-card" data-aos="fade-up">
+        <h3>Data Analytics</h3>
+        <div class="skill">
+          <span>Data Cleaning & Wrangling</span>
+          <div class="progress-bar"><div style="width: 87%"></div></div>
+        </div>
+        <div class="skill">
+          <span>Exploratory Data Analysis (EDA)</span>
+          <div class="progress-bar"><div style="width: 80%"></div></div>
+        </div>
+        <div class="skill">
+          <span>Statistical Analysis</span>
+          <div class="progress-bar"><div style="width: 78%"></div></div>
+        </div>
+      </div>
+  
+      <div class="skill-card" data-aos="fade-up">
+        <h3>Visualization Tools</h3>
+        <div class="skill">
+          <span>Power BI</span>
+          <div class="progress-bar"><div style="width: 85%"></div></div>
+        </div>
+        
+        <div class="skill">
+          <span>Excel</span>
+          <div class="progress-bar"><div style="width: 95%"></div></div>
+        </div>
+      </div>
+  
+      <div class="skill-card" data-aos="fade-up">
+        <h3>Other Tools</h3>
+        <div class="skill">
+          <span>Git & GitHub</span>
+          <div class="progress-bar"><div style="width: 80%"></div></div>
+        </div>
+        <div class="skill">
+          <span>Jupyter Notebook</span>
+          <div class="progress-bar"><div style="width: 85%"></div></div>
+        </div>
+        <div class="skill">
+          <span>Google Sheets</span>
+          <div class="progress-bar"><div style="width: 80%"></div></div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+        <div class="project-card" data-aos="fade-up">
+            <h3>Restaurant Sales Dashboard (Excel)</h3>
+            <p>
+              Designed an interactive Excel dashboard to analyze restaurant sales, 
+              customer feedback, and order trends.  
+              Used pivot tables, slicers, and charts to visualize KPIs like total revenue, 
+              highest selling items, and monthly growth.
+            </p>
+            <a href="assets/rest1.png" target="_blank" class="btn">View Dashboard</a>
+          </div>
+      <div class="project-card">
+        <h3>🧠 Heart Disease Prediction</h3>
+        <p>Used ML models (DNN, KNN, LDA, SMO) for early stage disease prediction with high accuracy.</p>
+      </div>
+      <div class="project-card">
+        <h3>🤖 Brain Tumor Classification</h3>
+        <p>Classified MRI scans into glioblastoma, sarcoma, metastatic & normal using ML algorithms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s connect! You can reach me via WhatsApp, Email, or Phone.</p>
+  
+    <div class="contact-container">
+      
+      <!-- WhatsApp -->
+      <a href="https://wa.me/918303293943" target="_blank" class="contact-card">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>Chat with me directly on WhatsApp</p>
+      </a>
+  
+      <!-- Email -->
+      <a href="mailto:ak.aryan141@gmail.com" class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>Send me an email for collaborations</p>
+      </a>
+  
+      <!-- Call -->
+      <a href="tel:+918303293943" class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>Call</h3>
+        <p>Give me a quick call</p>
+      </a>
+  
+    </div>
+  </section>
+  
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>© 2025 Aryan Kumar | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
