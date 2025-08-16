@@ -13,6 +13,24 @@
     overflow-x: hidden;
   }
   
+  
+  @keyframes typing {
+    from { width: 0 }
+  }
+  @keyframes blink {
+    50% { border-color: transparent }
+  }
+  
+
+  header {
+    transition: background 0.3s, padding 0.3s;
+  }
+  header.sticky {
+    background: #0a192f;
+    padding: 10px 5%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  
   /* Links */
   a {
     color: inherit;
@@ -347,4 +365,7 @@
       margin-bottom: 20px;
     }
   }
-  
+  .typed-cursor {
+    color: #00ffcc;  /* cursor ka color change */
+    font-size: 2rem; /* size bada chhota kar sakte ho */
+  }

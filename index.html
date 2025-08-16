@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aryan Kumar | Data Analyst Portfolio</title>
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
   <script>
     // Smooth scroll
     document.addEventListener("DOMContentLoaded", () => {
@@ -18,8 +21,12 @@
         });
       });
     });
+    
   </script>
+  
 </head>
+
+
 <body>
   <!-- ========== NAVBAR ========== -->
   <header>
@@ -37,7 +44,7 @@
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <h2>Hi, I'm Aryan Kumar</h2>
+      <h2 class="typing"></h2>
       <p>Aspiring <strong>Data Analyst</strong> skilled in Python, SQL, Power BI & Machine Learning.  
          I love solving problems using data and creating impactful dashboards & models.</p>
       <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
@@ -199,5 +206,17 @@
   <footer>
     <p>© 2025 Aryan Kumar | All Rights Reserved</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed(".typing", {
+    strings: ["Aryan Kumar", "Data Analyst","आर्यन कुमार", 
+    "डेटा एनालिस्ट"],
+  typeSpeed: 80,
+  backSpeed: 50,
+  backDelay: 1000,
+  loop: true,
+  showCursor: false 
+  });
+</script>
 </body>
 </html>
