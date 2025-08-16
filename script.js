@@ -1,15 +1,69 @@
-// Smooth scroll for nav links
+
+// Active Link Highlight on Scroll
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 70;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navItems.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// ✅ Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-      if (this.getAttribute("href").startsWith("#")) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth"
-        });
-      }
+  anchor.addEventListener("click", function(e) {
+    if (this.getAttribute("href").startsWith("#")) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
+// ✅ Sticky Header on Scroll
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 50);
+});
+// ---- Navbar mobile toggle ----
+const menuBtn = document.querySelector('.menu-toggle');
+const navList = document.querySelector('.nav-links');
+
+if (menuBtn && navList) {
+  menuBtn.addEventListener('click', () => {
+    navList.classList.toggle('open');
+    menuBtn.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', menuBtn.classList.contains('open'));
+  });
+
+  // Close menu on link click (mobile)
+  navList.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navList.classList.remove('open');
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
     });
   });
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 50);
+
+  // If user resizes to desktop, ensure menu is reset
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navList.classList.remove('open');
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
   });
+}

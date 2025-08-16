@@ -57,41 +57,70 @@
     transform: scale(1.05);
   }
   
-  /* ========== NAVBAR ========== */
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+  /* Navbar Container */
+/* ===== Navbar Base ===== */
+.site-header{
+  position: sticky; top:0; z-index:1000;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 10%;
+  background:#0a192f;
+  box-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+
+/* Brand / Logo */
+.site-header .brand{
+  color:#64ffda; font-weight:700; letter-spacing:.5px; font-size:22px;
+}
+
+/* Links (desktop default) */
+.nav-links{
+  list-style:none; display:flex; gap:26px; margin:0; padding:0;
+}
+.nav-links a{
+  color:#ccd6f6; text-decoration:none; font-weight:500; font-size:16px;
+  padding:8px 10px; border-radius:6px; transition:.25s;
+}
+.nav-links a:hover{ color:#64ffda; background:rgba(100,255,218,.12); }
+.nav-links a.active{ border-bottom:2px solid #64ffda; }
+
+/* Hamburger button – hidden on desktop */
+.menu-toggle{
+  display:none; border:0; background:transparent; cursor:pointer;
+  width:36px; height:32px; position:relative;
+}
+.menu-toggle span{
+  position:absolute; left:4px; right:4px; height:2px; background:#64ffda;
+  transition:.25s; border-radius:2px;
+}
+.menu-toggle span:nth-child(1){ top:8px; }
+.menu-toggle span:nth-child(2){ top:15px; }
+.menu-toggle span:nth-child(3){ top:22px; }
+
+/* ===== Mobile ===== */
+@media (max-width: 768px){
+  .menu-toggle{ display:block; }             /* show hamburger */
+  .nav-links{
+    display:none;                            /* hide links by default */
+    position:absolute; right:5%; top:60px;
+    flex-direction:column; gap:14px;
+    background:#112240; padding:16px 18px;
+    border-radius:10px; box-shadow:0 10px 25px rgba(0,0,0,.35);
   }
-  
-  header h1 {
-    color: #64ffda;
-    font-size: 1.5rem;
-  }
-  
-  nav ul {
-    display: flex;
-    gap: 25px;
-  }
-  
-  nav ul li a {
-    color: #e2e8f0;
-    transition: 0.3s;
-    font-weight: 500;
-  }
-  
-  nav ul li a:hover {
-    color: #64ffda;
-  }
+  .nav-links.open{ display:flex; }           /* show when toggled */
+
+  /* Nice X animation */
+  .menu-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .menu-toggle.open span:nth-child(2){ opacity:0; }
+  .menu-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+}
+
+/* Optional sticky visual when scrolling (toggle via JS you already added) */
+.site-header.sticky{ background:rgba(10,25,47,.92); backdrop-filter:blur(8px); }
+
+
+ 
+
+
   
   /* ========== HERO SECTION ========== */
   .hero {
